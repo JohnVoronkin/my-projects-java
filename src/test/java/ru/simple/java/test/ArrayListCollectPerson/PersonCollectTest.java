@@ -15,7 +15,7 @@ public class PersonCollectTest {
          коллекцию, то будем писать меньше кода.
           */
         // если надо вывести только людей старше 20 лет, то код будет таким
-        List<Person> older20 = p.persons().filter(x -> x.getAge() > 23).collect(Collectors.toList());
+        List<Person> older20 = p.persons().filter(x -> x.getAge() > 20).collect(Collectors.toList());
         System.out.println(older20);
     }
 

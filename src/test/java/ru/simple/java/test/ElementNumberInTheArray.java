@@ -3,12 +3,12 @@ package ru.simple.java.test;
 /**
  * Возвращаем номер элемента в массиве
  */
-public class ArraysTest {
+public class ElementNumberInTheArray {
 
     public static void main(String[] args) {
-        int[] mas = {1, 3, 5, 76, 98, 76};
+        int[] mas = {1, 3, 5, 76, 98, 77};
 
-        System.out.println(findNumberInMass(mas, 76));
+        System.out.println(findNumberInMass(mas, 77));
 
     }
 

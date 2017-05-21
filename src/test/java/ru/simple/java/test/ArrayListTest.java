@@ -1,7 +1,20 @@
 package ru.simple.java.test;
 
-/**
- * Created by john on 16.05.2017.
- */
+import java.util.ArrayList;
+
 public class ArrayListTest {
+
+    public static void main(String[] args) {
+        System.out.println(LIST);
+    }
+
+    final static ArrayList<String> LIST = new ArrayList<String>() {
+        {
+            add("value one");
+            add("value two");
+            add("value there");
+        }
+    };
+
+
 }

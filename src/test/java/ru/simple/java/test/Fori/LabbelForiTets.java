@@ -1,7 +1,7 @@
 package ru.simple.java.test.Fori;
 
 /**
- * Использование break как цивилизованной формы goto.
+ * Использование break, как цивилизованной формы goto.
  */
 public class LabbelForiTets {
 

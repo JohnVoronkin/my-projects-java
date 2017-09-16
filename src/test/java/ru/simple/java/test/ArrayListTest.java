@@ -19,6 +19,7 @@ public class ArrayListTest {
         // Trim the arraylist
         arrlist.trimToSize();
 
+        System.out.printf("В списке %s эл. \n", arrlist.size());
         // let us print all the elements available in list
         for (Integer number : arrlist) {
             System.out.println("Number = " + number);
@@ -34,7 +35,7 @@ public class ArrayListTest {
         list.add(6);
         list.add(7);
         list.add(8);
-        list.removeAll(list.subList(2,5));
+        list.removeAll(list.subList(2, 5));
         list.trimToSize();
         System.out.println(list); //[1, 2, 6, 7, 8]
     }

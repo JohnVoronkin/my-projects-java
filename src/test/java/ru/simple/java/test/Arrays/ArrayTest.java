@@ -1,4 +1,4 @@
-package ru.simple.java.test;
+package ru.simple.java.test.Arrays;
 
 import java.io.IOException;
 import java.util.Arrays;

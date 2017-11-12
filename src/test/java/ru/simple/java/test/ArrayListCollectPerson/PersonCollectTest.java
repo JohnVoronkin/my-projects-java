@@ -3,8 +3,7 @@ package ru.simple.java.test.ArrayListCollectPerson;
 import ru.simple.java.test.model.Person.Person;
 import ru.simple.java.test.model.Person.PersonCollect;
 
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Comparator;
 
 
 public class PersonCollectTest {
@@ -15,8 +14,14 @@ public class PersonCollectTest {
          коллекцию, то будем писать меньше кода.
           */
         // если надо вывести только людей старше 20 лет, то код будет таким
-        List<Person> older20 = p.persons().filter(x -> x.getAge() > 20).collect(Collectors.toList());
-        System.out.println(older20);
+        double averageAge = p.persons()
+                .filter(x -> x.getAge() > 18)
+                .sorted(Comparator.comparing(Person::getName))
+                // map - позволяет превратить наши объекты класса Personal в наборы других данных
+                .mapToInt(Person::getAge).average().getAsDouble();
+
+        System.out.println(averageAge);
+
     }
 
 }

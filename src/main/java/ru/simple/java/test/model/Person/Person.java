@@ -29,8 +29,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person [name=" + name + ", " +
-                "age=" + age + "]";
+        return String.format("%s - %d", this.getName(), this.getAge());
     }
 
 

@@ -22,8 +22,13 @@ public class PersonCollect {
      */
     public List<Person> getAllPersons() {
         if (persons.isEmpty()) {
-            persons = Arrays.asList(new Person("Andrew", 17), new Person("Igor", 23),
-                    new Person("Ira", 23), new Person("Maxim", 24));
+            persons = Arrays.asList(
+                    new Person("Andrew", 17),
+                    new Person("Igor", 38),
+                    new Person("Ira", 6),
+                    new Person("Maxim", 24),
+                    new Person("Mariay", 18)
+            );
         }
         return persons;
     }

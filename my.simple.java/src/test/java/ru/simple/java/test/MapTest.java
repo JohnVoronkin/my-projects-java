@@ -18,9 +18,7 @@ public class MapTest {
         fruits.put("orange", 25);
         fruits.put("lemon", 7);
 
-        fruits.forEach((key, value) -> {
-            System.out.println(key + " == " + value);
-        });
+        fruits.forEach((key, value) -> System.out.println(key + " == " + value));
     }
 
 }

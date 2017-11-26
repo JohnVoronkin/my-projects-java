@@ -1,4 +1,4 @@
-package ru.simple.java.test.model.Person;
+package Person;
 
 
 import java.util.ArrayList;

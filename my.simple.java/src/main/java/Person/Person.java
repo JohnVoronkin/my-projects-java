@@ -1,4 +1,4 @@
-package ru.simple.java.test.model.Person;
+package Person;
 
 
 public class Person {

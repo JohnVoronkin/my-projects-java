@@ -1,14 +1,21 @@
-group 'my-simple-java'
-version '1.0-SNAPSHOT'
+subprojects {
 
-apply plugin: 'java'
+    group 'my-projects-java'
+    version '1.0-SNAPSHOT'
 
-sourceCompatibility = 1.8
+    apply plugin: 'java'
 
-repositories {
-    mavenCentral()
-}
+    sourceCompatibility = 1.8
 
-dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        // https://mvnrepository.com/artifact/io.spring.gradle/dependency-management-plugin
+        compile group: 'io.spring.gradle', name: 'dependency-management-plugin', version: '1.0.3.RELEASE'
+        // https://mvnrepository.com/artifact/org.springframework/spring-context
+        compile group: 'org.springframework', name: 'spring-context', version: '5.0.1.RELEASE'
+
+    }
 }

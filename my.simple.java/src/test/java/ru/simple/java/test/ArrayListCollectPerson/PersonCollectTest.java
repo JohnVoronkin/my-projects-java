@@ -1,7 +1,7 @@
 package ru.simple.java.test.ArrayListCollectPerson;
 
-import ru.simple.java.test.model.Person.Person;
-import ru.simple.java.test.model.Person.PersonCollect;
+import Person.Person;
+import Person.PersonCollect;
 
 import java.util.Comparator;
 

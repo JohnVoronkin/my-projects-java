@@ -1,4 +1,4 @@
 rootProject.name = 'simple.projects.java'
 
-include 'my.simple.spring', 'my.simple.java'
+include ':my.simple.spring', ':my.simple.java', ':my.simple.automated'
 

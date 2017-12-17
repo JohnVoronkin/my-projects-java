@@ -1,0 +1,10 @@
+dependencies {
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.8.1'
+    // https://mvnrepository.com/artifact/org.testng/testng
+    testCompile group: 'org.testng', name: 'testng', version: '6.13.1'
+
+    compile 'io.github.bonigarcia:webdrivermanager:2.0.1'
+
+
+}

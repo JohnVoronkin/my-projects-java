@@ -22,6 +22,13 @@ public class PersonCollectTest {
 
         System.out.println(averageAge);
 
+        System.out.println("\n");
+
+        new Person().addActor(
+                ()-> System.out.println("one"),
+                ()-> System.out.println("two"))
+                .act();
+
     }
 
 }

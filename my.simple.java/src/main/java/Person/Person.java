@@ -1,14 +1,34 @@
 package Person;
 
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class Person {
 
+    private ArrayList<Actor> actors;
     private String name;
     private Integer age;
 
-    Person(String name, int age) {
+    public Person(String name, int age) {
         this.name = name;
         this.age = age;
+    }
+
+    public Person() {
+        actors = new ArrayList<>();
+    }
+
+    public Person addActor(Actor... actors) {
+        Collections.addAll(this.actors, actors);
+        return this;
+    }
+
+    public Person act() {
+        for (Actor actor : actors) {
+            actor.act();
+        }
+        return this;
     }
 
     public String getName() {

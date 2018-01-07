@@ -1,4 +1,4 @@
-package ru.simple.java.test.ArrayListCollectPerson;
+package ru.simple.java.test.List;
 
 import Person.Person;
 import Person.PersonCollect;

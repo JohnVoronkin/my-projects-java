@@ -17,5 +17,7 @@ subprojects {
         // https://mvnrepository.com/artifact/org.springframework/spring-context
         compile group: 'org.springframework', name: 'spring-context', version: '5.0.1.RELEASE'
 
+        // https://mvnrepository.com/artifact/org.testng/testng
+        testCompile group: 'org.testng', name: 'testng', version: '6.13.1'
     }
 }

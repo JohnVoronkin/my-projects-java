@@ -1,7 +1,7 @@
 package ru.simple.java.test.List;
 
-import Person.Person;
-import Person.PersonCollect;
+import person.Person;
+import person.PersonCollect;
 
 import java.util.Comparator;
 
@@ -21,8 +21,6 @@ public class PersonCollectTest {
                 .mapToInt(Person::getAge).average().getAsDouble();
 
         System.out.println(averageAge);
-
-        System.out.println("пример 2" + "\n");
 
         new Person().addActor(
                 ()-> System.out.println("one"),

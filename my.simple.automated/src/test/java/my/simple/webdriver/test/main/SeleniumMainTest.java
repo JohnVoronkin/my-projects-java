@@ -1,4 +1,4 @@
-package propertyFile;
+package my.simple.webdriver.test.main;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -7,9 +7,9 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import utils.ConfigProperties;
 
-public class MainTest {
+public class SeleniumMainTest {
+
 
     private WebDriver driver;
 
@@ -22,7 +22,7 @@ public class MainTest {
 
     @Test
     public void openPage() {
-        driver.get(ConfigProperties.getTestProperty("url"));
+        driver.get("http://mvnrepository.com");
         String title = driver.getTitle();
         Assert.assertTrue(title.contains("Maven Repository"));
     }
@@ -31,6 +31,5 @@ public class MainTest {
     public void tearDown() {
         driver.quit();
     }
-
 
 }

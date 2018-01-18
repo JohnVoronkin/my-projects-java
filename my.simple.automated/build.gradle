@@ -1,10 +1,15 @@
+ext {
+    selenideVersion = '4.10'
+    assertjVersion = '3.9.0'
+}
+
 dependencies {
-    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
-    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.8.1'
+
     // https://mvnrepository.com/artifact/org.testng/testng
     testCompile group: 'org.testng', name: 'testng', version: '6.13.1'
+    compile "com.codeborne:selenide:${selenideVersion}"
 
-    compile 'io.github.bonigarcia:webdrivermanager:2.0.1'
-
+    // Required if generating JodaTime data types
+    compile "org.assertj:assertj-core:${assertjVersion}"
 
 }

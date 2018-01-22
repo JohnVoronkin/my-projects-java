@@ -1,6 +1,6 @@
 package song;
 
-public class Song implements Comparable<Song>{
+public class Song implements Comparable<Song> {
 
     private String title;
     private String artist;
@@ -38,7 +38,7 @@ public class Song implements Comparable<Song>{
     }
 
     @Override
-    public int compareTo(Song s) {
-        return this.title.compareTo(s.getTitle());
+    public int compareTo(Song o) {
+        return this.title.compareTo(o.getTitle());
     }
 }

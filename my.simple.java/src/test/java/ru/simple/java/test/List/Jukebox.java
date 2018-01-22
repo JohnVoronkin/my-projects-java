@@ -6,6 +6,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Objects;
 
 public class Jukebox {
@@ -16,12 +17,24 @@ public class Jukebox {
         new Jukebox().go();
     }
 
+    class ArtistCompare implements Comparator<Song> {
+        @Override
+        public int compare(Song o1, Song o2) {
+            return o1.getArtist().compareTo(o2.getArtist());
+        }
+    }
+
     public void go() {
         getSongs();
-        System.out.println(songList);
+        System.out.println("Без сортировки: " + songList);
 
         Collections.sort(songList);
-        System.out.println(songList);
+        System.out.println("Сортировка title: " + songList);
+
+        ArtistCompare artistCompare = new ArtistCompare();
+
+        Collections.sort(songList, artistCompare);
+        System.out.println("Сортировка artist: " + songList);
     }
 
     void getSongs() {

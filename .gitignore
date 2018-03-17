@@ -1,7 +1,3 @@
-.gradle/
-.idea/
-build/
-*.imi
-my.simple.automated/out
-my.simple.java/out
-my.simple.spring/out
+/.idea/
+/out/
+/.gradle/

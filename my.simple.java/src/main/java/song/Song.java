@@ -8,6 +8,17 @@ public class Song implements Comparable<Song> {
     private String bpm;
 
     @Override
+    public boolean equals(Object aSong) {
+        Song s = (Song) aSong;
+        return getTitle().equals(s.getTitle());
+    }
+
+    @Override
+    public int hashCode() {
+        return title.hashCode();
+    }
+
+    @Override
     public String toString() {
         return "Song{" +
                 "title='" + title + '\'' +

@@ -4,14 +4,11 @@ import song.Song;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Objects;
+import java.util.*;
 
 public class Jukebox {
 
-    private ArrayList<Song> songList = new ArrayList<>();
+    private List<Song> songList = new ArrayList<>();
 
     public static void main(String[] args) {
         new Jukebox().go();
@@ -35,6 +32,10 @@ public class Jukebox {
 
         Collections.sort(songList, artistCompare);
         System.out.println("Сортировка artist: " + songList);
+
+        Set<Song> songSet = new HashSet<>();
+        songSet.addAll(songList);
+        System.out.println("Сортировка c hash set: " + songSet);
     }
 
     void getSongs() {

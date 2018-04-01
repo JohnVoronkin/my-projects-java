@@ -1,4 +1,4 @@
-package ru.simple.java.test.anonymousInnerClassesAndLambda;
+package consumer;
 
 public class Radio implements ElectricityConsumer {
 

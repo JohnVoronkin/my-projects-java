@@ -1,5 +1,9 @@
 package ru.simple.java.test.anonymousInnerClassesAndLambda;
 
+import consumer.Radio;
+import consumer.Switcher;
+import song.Lamp;
+
 import static java.lang.System.out;
 
 public class Program {

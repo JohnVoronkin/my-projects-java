@@ -1,4 +1,4 @@
-package ru.simple.java.test.anonymousInnerClassesAndLambda;
+package consumer;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package ru.simple.java.test.anonymousInnerClassesAndLambda;
+package consumer;
 
 @FunctionalInterface
 public interface ElectricityConsumer {

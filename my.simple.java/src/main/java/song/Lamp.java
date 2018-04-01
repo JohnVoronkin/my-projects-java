@@ -1,4 +1,6 @@
-package ru.simple.java.test.anonymousInnerClassesAndLambda;
+package song;
+
+import consumer.ElectricityConsumer;
 
 public class Lamp implements ElectricityConsumer {
 

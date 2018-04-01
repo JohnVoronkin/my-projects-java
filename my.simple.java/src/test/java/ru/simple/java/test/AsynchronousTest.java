@@ -1,4 +1,4 @@
-package ru.simple.java.test.List;
+package ru.simple.java.test;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicInteger;

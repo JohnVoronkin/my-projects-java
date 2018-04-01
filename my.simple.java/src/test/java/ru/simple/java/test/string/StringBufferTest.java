@@ -1,4 +1,4 @@
-package ru.simple.java.test;
+package ru.simple.java.test.string;
 
 
 public class StringBufferTest {

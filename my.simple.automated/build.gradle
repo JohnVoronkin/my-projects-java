@@ -1,5 +1,5 @@
 ext {
-    selenideVersion = '4.10'
+    selenideVersion = '4.11.0'
     assertjVersion = '3.9.0'
 }
 

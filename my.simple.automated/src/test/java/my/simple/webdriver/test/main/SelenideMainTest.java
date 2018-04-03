@@ -12,14 +12,20 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class SelenideMainTest {
 
+    /*
+    1. Настройка теста
+    2. Вызов тестируемого метода
+    3. Утверждение
+    */
+
     @BeforeClass
     public void setup() {
         Configuration.browser = WebDriverRunner.CHROME;
+        open("http://mvnrepository.com");
     }
 
     @Test
     public void openPage() {
-        open("http://mvnrepository.com");
         assertThat(title())
                 .isEqualTo("Maven Repository: Search/Browse/Explore");
         $x("//*[@id='query']").setValue("gradle");

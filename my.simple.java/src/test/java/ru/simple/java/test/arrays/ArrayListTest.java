@@ -1,7 +1,6 @@
-package ru.simple.java.test.Arrays;
+package ru.simple.java.test.arrays;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ArrayListTest {
 

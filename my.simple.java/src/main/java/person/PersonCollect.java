@@ -18,7 +18,7 @@ public class PersonCollect {
     }
 
     /*
-    Метод getAllPersons собирает данные в коллекцию List. Данные могут храниться где угодно: БД, Excel, в самом коде
+    Метод getAllPersons собирает данные в коллекцию list. Данные могут храниться где угодно: БД, Excel, в самом коде
      */
     public List<Person> getAllPersons() {
         if (persons.isEmpty()) {

@@ -1,6 +1,6 @@
-package ru.simple.java.test.simple;
+package ru.simple.java.test;
 
-public class MyTest {
+public class InitializationPriority {
 
   public static void main(String[] args) {
     A a = new B(1);
@@ -9,15 +9,15 @@ public class MyTest {
 
 class A {
   A() {
-    System.out.println("A");
+    System.out.println("вызов - конструктора родителя - \"4\"");
   }
 
   {
-    System.out.println("AC");
+    System.out.println("вызов - метода родителя - \"3\"");
   }
 
   static {
-    System.out.println("static метод родителя AK");
+    System.out.println("вызов - static метод родителя \"1\"");
   }
 
 }
@@ -29,18 +29,18 @@ class B extends A {
   }
 
   {
-    System.out.println("BC");
+    System.out.println("вызов - метода потомка - \"5\"");
   }
 
   B() {
-    System.out.println("def B");
+    System.out.println("вызов - конструктора потомка - \"7\"");
   }
 
   {
-    System.out.println("BC2");
+    System.out.println("вызов - метода потомка - \"5.1\"");
   }
 
   static {
-    System.out.println("static метод потомка BK");
+    System.out.println("вызов - static метод потомка \"2\"");
   }
 }

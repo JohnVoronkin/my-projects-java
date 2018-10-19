@@ -1,6 +1,6 @@
 package ru.simple.java.test.simple;
 
-public class Test {
+public class methodOverriding {
 
   public static void main(String[] args) {
 
@@ -22,7 +22,7 @@ public class Test {
 
   static class Cat {
 
-    public String getName() {
+    protected String getName() {
       return "Васька";
     }
 
@@ -39,12 +39,12 @@ public class Test {
       return 115;
     }
 
-
     public String getPublicName() {
       return super.getName(); //вызов protected метода
     }
 
 
+    // Расширение видимости
     @Override
     public String getName() {
       return "Василий Тигранович";

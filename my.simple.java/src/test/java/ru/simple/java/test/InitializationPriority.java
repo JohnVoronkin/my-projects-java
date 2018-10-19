@@ -17,7 +17,7 @@ class A {
   }
 
   static {
-    System.out.println("AK");
+    System.out.println("static метод родителя AK");
   }
 
 }
@@ -41,6 +41,6 @@ class B extends A {
   }
 
   static {
-    System.out.println("BK");
+    System.out.println("static метод потомка BK");
   }
 }

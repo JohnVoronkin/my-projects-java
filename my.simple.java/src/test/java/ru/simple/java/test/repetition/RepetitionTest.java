@@ -11,7 +11,7 @@ public class RepetitionTest {
         Map<String, String> map = new HashMap<>();
 
         map.put("first", "Cat");
-        map.put("second", "Dog");
+        map.put("second", "Tiger");
         map.put("third", "Cheburashka");
 
         for (Map.Entry<String, String> pair : map.entrySet()) {

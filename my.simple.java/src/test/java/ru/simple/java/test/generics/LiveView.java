@@ -1,4 +1,4 @@
-package ru.simple.java.test.generic;
+package ru.simple.java.test.generics;
 
 public class LiveView {
 

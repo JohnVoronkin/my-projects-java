@@ -1,4 +1,4 @@
-package ru.simple.java.test.generic;
+package ru.simple.java.test.generics;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +34,7 @@ public class Simple {
 
   private static void printAnimal_super(List<? super Animal> list) {
     for (Object animal : list) {
-      
+
     }
   }
 

@@ -13,7 +13,7 @@ class A {
   }
 
   {
-    System.out.println("вызов - метода родителя - \"3\"");
+    System.out.println("\"3\"");
   }
 
   static {
@@ -29,7 +29,7 @@ class B extends A {
   }
 
   {
-    System.out.println("вызов - метода потомка - \"5\"");
+    System.out.println("\"5\"");
   }
 
   B() {
@@ -37,7 +37,7 @@ class B extends A {
   }
 
   {
-    System.out.println("вызов - метода потомка - \"5.1\"");
+    System.out.println("\"5.1\"");
   }
 
   static {

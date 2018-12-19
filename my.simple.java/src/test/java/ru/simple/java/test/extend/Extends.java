@@ -1,4 +1,4 @@
-package ru.simple.java.test.extendsTest;
+package ru.simple.java.test.extend;
 
 public class Extends {
 

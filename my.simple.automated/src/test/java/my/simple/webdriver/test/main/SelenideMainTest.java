@@ -21,7 +21,7 @@ public class SelenideMainTest {
     @BeforeClass
     public void setup() {
         Configuration.browser = WebDriverRunner.CHROME;
-        open("http://mvnrepository.com");
+        open("https://mvnrepository.com");
     }
 
     @Test

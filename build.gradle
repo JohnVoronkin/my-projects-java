@@ -1,23 +1,18 @@
-subprojects {
+group 'my-projects-java'
+version '1.0'
 
-    group 'my-projects-java'
-    version '1.0'
+apply plugin: 'java'
 
-    apply plugin: 'java'
+sourceCompatibility = 1.8
 
-    sourceCompatibility = 1.8
+repositories {
+    mavenCentral()
+}
 
-    repositories {
-        mavenCentral()
-    }
 
-    dependencies {
-        // https://mvnrepository.com/artifact/io.spring.gradle/dependency-management-plugin
-        compile group: 'io.spring.gradle', name: 'dependency-management-plugin', version: '1.0.3.RELEASE'
-        // https://mvnrepository.com/artifact/org.springframework/spring-context
-        compile group: 'org.springframework', name: 'spring-context', version: '5.0.1.RELEASE'
+dependencies {
+    
+    // https://mvnrepository.com/artifact/org.testng/testng
+    testCompile group: 'org.testng', name: 'testng', version: '7.0.0-beta3'
 
-        // https://mvnrepository.com/artifact/org.testng/testng
-        testCompile group: 'org.testng', name: 'testng', version: '6.13.1'
-    }
 }

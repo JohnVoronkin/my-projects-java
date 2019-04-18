@@ -6,7 +6,7 @@ import java.util.List;
 /*
  * List - это order collection (упорядоченная коллекция). Добавили в 3-й (в конец списка) индекс по списку, остается третьим и т.д.
  */
-public class ToDoList {
+public class  ToDoList {
 
   private List<String> toDoList = new ArrayList<>();
 
@@ -15,7 +15,7 @@ public class ToDoList {
     toDoList.add(task);
   }
 
-  public void addToListatPosition(final int position, final String task) {
+  public void addToListAtPosition(final int position, final String task) {
     toDoList.add(position, task);
   }
 
@@ -35,9 +35,9 @@ public class ToDoList {
     toDoList.remove(task);
   }
 
-  public void getTaskPriority(final String task) {
+  public int getTaskPriority(final String task) {
     // indexOf - получить индекс элемента списка
-    toDoList.indexOf(task);
+    return toDoList.indexOf(task);
   }
 
 

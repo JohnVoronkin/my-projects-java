@@ -61,6 +61,7 @@ public class ListRunner {
           scanner.nextLine();
           int position = scanner.nextInt();
           System.out.println("please enter a task name");
+          scanner.nextLine();
           String task6 = scanner.nextLine();
           list.addToListAtPosition(position, task6);
           System.out.println("please choose an action by typing [0-6]");
@@ -82,7 +83,7 @@ public class ListRunner {
             + "5 to get task priority or number in the list\n"
             + "6 to add a new item at specific position\n"
             + "press 0 for exit\n\n"
-            + "after choosing an option please press enter"
+            + "after choosing an option PLEASE PRESS ENTER"
     );
   }
 }

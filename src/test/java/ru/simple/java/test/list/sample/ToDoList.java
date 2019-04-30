@@ -1,18 +1,36 @@
 package ru.simple.java.test.list.sample;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.ListIterator;
 
 /*
  * List - это order collection (упорядоченная коллекция). Добавили в 3-й (в конец списка) индекс по списку, остается третьим и т.д.
  */
-public class  ToDoList {
+public class ToDoList {
 
-  private List<String> toDoList = new ArrayList<>();
+  private LinkedList<String> toDoList = new LinkedList<>();
 
 
   public void addToList(final String task) {
+    addAlphabeticalOrder(task);
+  }
+
+  private boolean addAlphabeticalOrder(final String task) {
+    ListIterator<String> listIterator = toDoList.listIterator();
+    while (listIterator.hasNext()) {
+      int compared = listIterator.next().compareTo(task);
+      if (compared == 0) {
+        System.out.println("Task already exists in the list");
+        return true;
+      } else if (compared > 0) {
+        listIterator.previous();
+        listIterator.add(task);
+        return true;
+      }
+    }
     toDoList.add(task);
+    return true;
   }
 
   public void addToListAtPosition(final int position, final String task) {
@@ -21,8 +39,9 @@ public class  ToDoList {
 
   public void printToDoList() {
     int count = 0;
-    for (String task : toDoList) {
-      System.out.println((count++) + " " + task);
+    Iterator<String> iterator = toDoList.iterator();
+    while (iterator.hasNext()) { // пока возвращает true - можно выполнять какое-то действие в цикле
+      System.out.println("element " + (count++) + " " + iterator.next());
     }
   }
 

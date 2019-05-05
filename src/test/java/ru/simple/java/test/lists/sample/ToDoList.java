@@ -5,7 +5,8 @@ import java.util.LinkedList;
 import java.util.ListIterator;
 
 /*
- * List - это order collection (упорядоченная коллекция). Добавили в 3-й (в конец списка) индекс по списку, остается третьим и т.д.
+ * List - это order collection (упорядоченная коллекция).
+ * Добавили в 3-й (в конец списка) индекс по списку, остается третьим и т.д.
  */
 public class ToDoList {
 

@@ -1,4 +1,4 @@
-package ru.simple.java.test.lists;
+package ru.simple.java.test.lists.map;
 
 import java.util.HashMap;
 import java.util.Map;

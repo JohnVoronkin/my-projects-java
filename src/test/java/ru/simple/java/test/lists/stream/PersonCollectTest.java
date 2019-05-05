@@ -1,4 +1,4 @@
-package ru.simple.java.test.lists;
+package ru.simple.java.test.lists.stream;
 
 import person.Person;
 import person.PersonCollect;

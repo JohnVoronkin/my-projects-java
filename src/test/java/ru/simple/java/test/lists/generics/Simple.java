@@ -15,12 +15,14 @@ public class Simple {
     listOfDog.add(new Dog());
     listOfDog.add(new Dog());
 
-    List<LiveView> listOfLiveView = new ArrayList<>();
-    listOfLiveView.add(new LiveView());
-    listOfLiveView.add(new LiveView());
+
 
     printAnimal_extends(listOfAnimal);
     printAnimal_extends(listOfDog);
+
+    List<LiveView> listOfLiveView = new ArrayList<>();
+    listOfLiveView.add(new LiveView());
+    listOfLiveView.add(new LiveView());
 
     printAnimal_super(listOfLiveView);
     printAnimal_super(listOfAnimal);

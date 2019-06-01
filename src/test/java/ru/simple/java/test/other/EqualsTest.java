@@ -4,6 +4,7 @@ package ru.simple.java.test.other;
  * Created by john on 15.06.2017.
  */
 public class EqualsTest {
+
     public static void main(String[] args) {
         String str1 = "string";
         String str2 = new String("string");

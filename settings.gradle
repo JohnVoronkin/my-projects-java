@@ -1,4 +1,3 @@
 rootProject.name = 'simple.project.java'
 
-include ':my.simple.java'
-
+include(':example-automated')

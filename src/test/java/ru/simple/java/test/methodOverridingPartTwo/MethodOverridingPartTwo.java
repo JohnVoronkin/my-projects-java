@@ -1,4 +1,4 @@
-package ru.simple.java.test.simple.methodOverridingPartTwo;
+package ru.simple.java.test.methodOverridingPartTwo;
 
 public class MethodOverridingPartTwo {
 

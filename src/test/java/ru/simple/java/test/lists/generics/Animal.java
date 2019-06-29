@@ -5,7 +5,6 @@ public class Animal extends LiveView {
   private int id;
 
   public Animal() {
-
   }
 
   public Animal(int id) {

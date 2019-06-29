@@ -45,11 +45,8 @@ allprojects {
         // https://projectlombok.org/
         compileOnly("org.projectlombok:lombok:${lombokVersion}")
         testCompileOnly("org.projectlombok:lombok:${lombokVersion}")
-        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.4.2'
-        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.4.2'
         // https://mvnrepository.com/artifact/org.assertj/assertj-core
         testCompile group: 'org.assertj', name: 'assertj-core', version: '3.12.2'
-
     }
 }
 

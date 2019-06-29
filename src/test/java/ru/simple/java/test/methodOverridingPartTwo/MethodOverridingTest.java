@@ -1,6 +1,6 @@
-package ru.simple.java.test.simple;
+package ru.simple.java.test.methodOverridingPartTwo;
 
-public class methodOverriding {
+public class MethodOverridingTest {
 
   public static void main(String[] args) {
 

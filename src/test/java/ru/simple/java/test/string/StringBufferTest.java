@@ -8,7 +8,6 @@ public class StringBufferTest {
         for (int i = 0; i < 100; i++) {
             contents.append("hello world\n");
         }
-
         // вывод содержимого на экран
         System.out.println(contents.toString());
     }

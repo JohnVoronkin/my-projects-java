@@ -1,10 +1,12 @@
 package ru.simple.java.test.lists.map;
 
 import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
 
 @AllArgsConstructor
+@EqualsAndHashCode
 @Getter
 @ToString
 public class WordWrapper implements Comparable<WordWrapper> {
@@ -12,10 +14,13 @@ public class WordWrapper implements Comparable<WordWrapper> {
   private final String word;
   private final int count;
 
-
   @Override
-  public int compareTo(WordWrapper word) {
-    return Integer.compare(word.getCount(), this.count);
-
+  public int compareTo(WordWrapper thatWord) {
+    if (this.count < thatWord.getCount()) {
+      return -1;
+    } else if (this.count > thatWord.getCount()) {
+      return 1;
+    }
+    return this.word.compareTo(thatWord.getWord());
   }
 }

@@ -40,11 +40,13 @@ public class MapLauncher {
     for (Map.Entry<String, Integer> pair : wordMap.entrySet()) {
       wordSet.add(new WordWrapper(pair.getKey(), pair.getValue()));
     }
-    return wordSet;
+    return new TreeSet<>(wordSet);
   }
 
   private static void printSet(NavigableSet<WordWrapper> wordMap) {
-
+    for (WordWrapper wordWrapper: wordMap) {
+      System.out.println(wordWrapper);
+    }
   }
 
 

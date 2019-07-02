@@ -1,4 +1,4 @@
-package ru.simple.java.test.lists.map;
+package ru.simple.java.test.lists.map.hashmap;
 
 import java.io.BufferedReader;
 import java.io.IOException;

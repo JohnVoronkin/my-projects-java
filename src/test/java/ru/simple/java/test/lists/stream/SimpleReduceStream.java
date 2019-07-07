@@ -11,8 +11,10 @@ public class SimpleReduceStream {
 
     List<Person> persons = Arrays.asList(
             new Person("Andrey", 20),
-            new Person("Igor", 23),
-            new Person("Ira", 23),
+            new Person("Igor", 19),
+            new Person("Ira", 41),
+            new Person("Jon", 23),
+            new Person("John", 56),
             new Person("Vitia", 12)
     );
 

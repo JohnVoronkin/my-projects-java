@@ -5,9 +5,21 @@ import java.util.*;
 public class TreeMapLauncher {
 
   public static void main(String[] args) {
-
     NavigableMap<AverageStudentGrade, Set<SubjectGrade>> grades = createGrades();
     printGrades(grades, false);
+
+    AverageStudentGrade border = grades.ceilingKey(new AverageStudentGrade("", 82));
+    NavigableMap<AverageStudentGrade, Set<SubjectGrade>> scholarshipStudents = (NavigableMap<AverageStudentGrade, Set<SubjectGrade>>) grades.tailMap(border);
+
+    System.out.println("=== scholarship students ===");
+    printGrades(scholarshipStudents.descendingMap(), false);
+
+    System.out.println("Contender student");
+    AverageStudentGrade contender = grades.lowerKey(border);
+    System.out.println(contender);
+
+    System.out.println("Highest grade student");
+    System.out.println(scholarshipStudents.descendingMap().firstEntry());
 
   }
 
@@ -41,10 +53,16 @@ public class TreeMapLauncher {
     jonSnowGrade.add(new SubjectGrade("history", 90));
     jonSnowGrade.add(new SubjectGrade("literature", 83));
 
+    Set<SubjectGrade> simpsonGrade = new HashSet<>();
+    simpsonGrade.add(new SubjectGrade("mathematics", 60));
+    simpsonGrade.add(new SubjectGrade("history", 78));
+    simpsonGrade.add(new SubjectGrade("literature", 70));
+
     NavigableMap<AverageStudentGrade, Set<SubjectGrade>> map = new TreeMap<>();
     map.put(new AverageStudentGrade("alex", calcAverage(alexGrade)), alexGrade);
     map.put(new AverageStudentGrade("victor", calcAverage(victorGrade)), victorGrade);
     map.put(new AverageStudentGrade("jonSnow", calcAverage(jonSnowGrade)), jonSnowGrade);
+    map.put(new AverageStudentGrade("simpson", calcAverage(simpsonGrade)), simpsonGrade);
 
     return map;
   }

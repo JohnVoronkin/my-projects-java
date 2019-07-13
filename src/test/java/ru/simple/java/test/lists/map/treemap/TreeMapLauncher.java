@@ -9,7 +9,8 @@ public class TreeMapLauncher {
     printGrades(grades, false);
 
     AverageStudentGrade border = grades.ceilingKey(new AverageStudentGrade("", 82));
-    NavigableMap<AverageStudentGrade, Set<SubjectGrade>> scholarshipStudents = (NavigableMap<AverageStudentGrade, Set<SubjectGrade>>) grades.tailMap(border);
+    NavigableMap<AverageStudentGrade, Set<SubjectGrade>> scholarshipStudents =
+            (NavigableMap<AverageStudentGrade, Set<SubjectGrade>>) grades.tailMap(border);
 
     System.out.println("=== scholarship students ===");
     printGrades(scholarshipStudents.descendingMap(), false);
@@ -29,8 +30,8 @@ public class TreeMapLauncher {
       System.out.println(gr);
       if (printValue) {
         Set<SubjectGrade> subjectGrades = grades.get(gr);
-        for (SubjectGrade subjectGrade: subjectGrades)
-        System.out.println(subjectGrade);
+        for (SubjectGrade subjectGrade : subjectGrades)
+          System.out.println(subjectGrade);
       }
       System.out.println();
     }

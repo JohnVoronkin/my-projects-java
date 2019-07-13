@@ -1,7 +1,0 @@
-
-dependencies {
-    // https://mvnrepository.com/artifact/org.testng/testng
-    testCompile group: 'org.testng', name: 'testng', version: '6.14.3'
-    // https://mvnrepository.com/artifact/de.redsix/pdfcompare
-    compile group: 'de.redsix', name: 'pdfcompare', version: '1.1.40'
-}

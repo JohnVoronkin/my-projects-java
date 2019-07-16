@@ -4,6 +4,8 @@ import ru.simple.java.test.lists.map.treemap.AverageStudentGrade;
 import ru.simple.java.test.lists.map.treemap.SubjectGrade;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.*;
 
 public class Writer {
@@ -56,6 +58,15 @@ public class Writer {
   }
 
   public void writeObject(List<Student> students, String fileName) {
+    try (ObjectOutputStream output = new ObjectOutputStream(Files.newOutputStream(Paths.get(fileName)))) {
+      for (Student student : students) {
+        output.writeObject(student);
+      }
+      output.writeObject(new Student("", -1, null));
+    } catch (IOException e) {
+      System.out.println("File cannot be opened. Program terminates");
+      e.printStackTrace();
+    }
 
   }
 

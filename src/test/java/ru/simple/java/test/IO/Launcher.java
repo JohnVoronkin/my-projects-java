@@ -4,18 +4,17 @@ import ru.simple.java.test.lists.map.treemap.AverageStudentGrade;
 import ru.simple.java.test.lists.map.treemap.SubjectGrade;
 import ru.simple.java.test.lists.map.treemap.TreeMapLauncher;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.SortedMap;
 
-public class IOLauncher {
+public class Launcher {
 
   public static final String FILE_NAME = "GradeBook.txt";
   public static final String BINARY_FILE = "Student.bin";
 
-  public static void main(String[] args) throws IOException {
+  public static void main(String[] args) {
     Reader reader = new Reader();
     Writer writer = new Writer();
     SortedMap<AverageStudentGrade, Set<SubjectGrade>> grades = TreeMapLauncher.createGrades();

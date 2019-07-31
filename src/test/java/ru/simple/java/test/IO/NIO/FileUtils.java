@@ -1,10 +1,13 @@
-package ru.simple.java.test.NIO;
+package ru.simple.java.test.IO.NIO;
 
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.file.FileSystem;
+import java.nio.file.FileSystems;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class FileUtils {
 
@@ -48,4 +51,29 @@ public class FileUtils {
     }
 
   }
+
+
+  public void printNioFileDetails(String fileName) {
+    Path path = Paths.get(fileName);
+    Path path1 = FileSystems.getDefault().getPath(fileName);
+    Path path2 = Paths.get(System.getProperty("user.dir"), fileName);
+
+    FileSystem fileSystem = path.getFileSystem();
+
+    // получить имя файла с к-м мы работаем
+    System.out.println("file name " + path.getFileName());
+    System.out.println("root dir " + path.getRoot());
+
+    Path absolutePath = path.toAbsolutePath();
+    System.out.println("absolute path " + absolutePath);
+
+    // получить родительскую директорию в той в которой мы находимся
+    System.out.println("parent dir " + absolutePath.getParent());
+
+    System.out.println("name count" + path.getNameCount());
+
+
+  }
+
+
 }

@@ -12,7 +12,9 @@ public class Launcher {
     try {
       //fileUtils.printIOFileDetails(FILE_NAME);
       fileUtils.printIOFileDetails("./");
+      System.out.println("---");
       fileUtils.printNioFileDetails(FILE_NAME);
+      fileUtils.createDir(FILE_NAME);
     } catch (IOException e) {
       e.printStackTrace();
     }

@@ -4,10 +4,7 @@ import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.nio.file.FileSystem;
-import java.nio.file.FileSystems;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.nio.file.*;
 
 public class FileUtils {
 
@@ -43,36 +40,63 @@ public class FileUtils {
       System.out.println("can exe - " + file.canExecute());
       System.out.println("file is hidden - " + file.isHidden());
       System.out.println("last modified - " + file.lastModified());
-      System.out.println("deleting a file - " + file.delete());
+      //System.out.println("deleting a file - " + file.delete());
 
       Path filePath = file.toPath(); // получить объект path (путь) из нашего файла
 
       BufferedInputStream br = new BufferedInputStream(new FileInputStream(file));
     }
-
   }
 
 
-  public void printNioFileDetails(String fileName) {
+  public void printNioFileDetails(final String fileName) throws IOException {
     Path path = Paths.get(fileName);
+
     Path path1 = FileSystems.getDefault().getPath(fileName);
     Path path2 = Paths.get(System.getProperty("user.dir"), fileName);
 
     FileSystem fileSystem = path.getFileSystem();
 
+    System.out.println("path - " + path);
     // получить имя файла с к-м мы работаем
-    System.out.println("file name " + path.getFileName());
-    System.out.println("root dir " + path.getRoot());
+    System.out.println("file name - " + path.getFileName());
 
     Path absolutePath = path.toAbsolutePath();
-    System.out.println("absolute path " + absolutePath);
-
+    // включает полную директорию и имя файла
+    System.out.println("absolute path - " + absolutePath);
+    System.out.println("root dir - " + absolutePath.getRoot());
     // получить родительскую директорию в той в которой мы находимся
-    System.out.println("parent dir " + absolutePath.getParent());
+    System.out.println("parent dir - " + absolutePath.getParent());
+    // кол-во имен в нашем пути
+    System.out.println("name count - " + absolutePath.getNameCount());
+    System.out.println("sub path - " + absolutePath.subpath(0, 2));
 
-    System.out.println("name count" + path.getNameCount());
+    Path path3 = Paths.get("../../");
+    System.out.println("real path - " + path3.toRealPath());
 
+    // существует ли файл
+    System.out.println("file exists - " + Files.exists(path));
+    System.out.println("file does not exists - " + Files.notExists(path));
+    // permission - rwe
+    System.out.println("is readable - " + Files.isReadable(path));
 
+    // эквивалентность фалов др. др..
+    System.out.println("is the same file - " + Files.isSameFile(path, path1));
+
+  }
+
+  public void createDir(String fileName) throws IOException {
+    Path path = Paths.get(fileName);
+
+    Path absolutePath = path.toAbsolutePath();
+    Path parentPath = absolutePath.getParent();
+    Path filesPath = parentPath.resolve("files"); // resolve - добавляет еще одну часть пути
+    if (Files.notExists(filesPath))
+      Files.createDirectory(filesPath);
+    // REPLACE_EXISTING заменяет текущий файл при копировании. Можно исполь. как move так и copy
+    Files.copy(absolutePath, filesPath.resolve(path), StandardCopyOption.REPLACE_EXISTING);
+    Files.delete(filesPath.resolve(path));
+    Files.delete(filesPath);
   }
 
 

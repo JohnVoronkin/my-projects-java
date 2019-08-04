@@ -4,9 +4,15 @@ import ru.simple.java.test.lists.map.treemap.AverageStudentGrade;
 import ru.simple.java.test.lists.map.treemap.SubjectGrade;
 
 import java.io.*;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
+
+import static java.nio.file.StandardOpenOption.APPEND;
+import static java.nio.file.StandardOpenOption.CREATE;
 
 public class Writer {
 
@@ -67,7 +73,25 @@ public class Writer {
       System.out.println("File cannot be opened. Program terminates");
       e.printStackTrace();
     }
+  }
 
+  public void nioWriterWithBuffer(String fileName) throws IOException {
+    Path path = Paths.get(fileName);
+    Charset charset = StandardCharsets.UTF_8;
+    try (BufferedWriter writer = Files.newBufferedWriter(path, charset)) {
+      // offset 0 - отступ от начала нашего буфера и далее указываем до какой степени будем писать
+      writer.write(fileName, 0, fileName.length()); // length() - пока есть символы
+    }
+  }
+
+  public void nioWriterWithStream(String filename, String lines) {
+    Path path = Paths.get(filename);
+    byte[] bytes = lines.getBytes();
+    try (OutputStream stream = Files.newOutputStream(path, CREATE, APPEND)) {
+      stream.write(bytes, 0, bytes.length);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 
 }

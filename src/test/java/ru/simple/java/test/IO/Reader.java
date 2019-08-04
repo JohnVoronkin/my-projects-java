@@ -1,10 +1,10 @@
 package ru.simple.java.test.IO;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.ObjectInputStream;
+import java.io.*;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +34,44 @@ public class Reader {
       e.printStackTrace();
     }
     return students;
+  }
+
+  /**
+   * Чтение данных из файла
+   *
+   * @param fileName имя передаваемого файла
+   * @throws IOException
+   */
+  public void readFileInFull(String fileName) throws IOException {
+    Path path = Paths.get(fileName);
+    var lines = Files.readAllLines(path);
+    for (String item : lines) {
+      System.out.println(item);
+    }
+  }
+
+  public void nioReadFileWithBuffer(String fileName) throws IOException {
+    Path path = Paths.get(fileName);
+    // если файл не в стандартной кодировке
+    Charset charset = StandardCharsets.UTF_8;
+    try (BufferedReader reader = Files.newBufferedReader(path, charset)) {
+      String line;
+      while ((line = reader.readLine()) != null) {
+        System.out.println(line);
+      }
+    }
+  }
+
+  public void nioReadWithStream(String filename) {
+    Path path = Paths.get(filename);
+    try (InputStream in = Files.newInputStream(path)) {
+      BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+      String line;
+      while ((line = reader.readLine()) != null)
+        System.out.println(line);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 
 }

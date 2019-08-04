@@ -57,7 +57,7 @@ public class FileUtils {
 
     FileSystem fileSystem = path.getFileSystem();
 
-    System.out.println("path - " + path);
+    System.out.println("get paths - " + path);
     // получить имя файла с к-м мы работаем
     System.out.println("file name - " + path.getFileName());
 

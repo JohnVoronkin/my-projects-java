@@ -1,6 +1,8 @@
 package ru.simple.java.test.IO;
 
 import java.io.*;
+import java.nio.ByteBuffer;
+import java.nio.channels.FileChannel;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -72,6 +74,36 @@ public class Reader {
     } catch (IOException e) {
       e.printStackTrace();
     }
+  }
+
+  public void nioReadWithChannel(String fileName) {
+    /*// чтение данных
+    FileInputStream inputStream = new FileInputStream(fileName);
+    inputStream.getChannel();
+    // запись данных
+    FileOutputStream outputStream = new FileOutputStream(fileName);
+    outputStream.getChannel();*/
+
+    try {
+      // создаем channel - к-й работает в обе стороны, т.е. как на read (input) так и на write (output)
+      RandomAccessFile rw = new RandomAccessFile(fileName, "rw");
+      FileChannel channel = rw.getChannel();
+
+      ByteBuffer buffer = ByteBuffer.allocate(100); // capacity буфера
+
+      int bytesNumber = channel.read(buffer);
+      while (bytesNumber > 0) {
+        buffer.flip();
+        while (buffer.hasRemaining()) {
+          System.out.print((char) buffer.get());
+        }
+        buffer.clear();
+        bytesNumber = channel.read(buffer);
+      }
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+
   }
 
 }

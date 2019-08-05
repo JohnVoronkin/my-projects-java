@@ -34,11 +34,13 @@ public class Launcher {
     // reader.nioReadFileWithBuffer(FILE_NAME);
     // writer.nioWriterWithBuffer(BUFFERED_FILE);
     // reader.nioReadWithStream(FILE_NAME);
-    writer.nioWriterWithStream(BUFFERED_FILE, "files recorded");
+    // writer.nioWriterWithStream(BUFFERED_FILE, "files recorded");
+    reader.nioReadWithChannel(FILE_NAME);
 
   }
 
-  private static void processGrades(SortedMap<AverageStudentGrade, Set<SubjectGrade>> grades, Writer writer, String fileName) {
+  private static void processGrades(SortedMap<AverageStudentGrade, Set<SubjectGrade>> grades, Writer writer,
+                                    String fileName) {
     List<Student> students = new ArrayList<>();
     for (AverageStudentGrade gradeKey : grades.keySet()) {
       students.add(new Student(gradeKey.getName(), gradeKey.getAverageGrade(), grades.get(gradeKey)));

@@ -13,7 +13,7 @@ import java.util.SortedMap;
 public class Launcher {
 
   public static final String FILE_NAME = "GradeBook.txt";
-  public static final String BUFFERED_FILE = "Buffered.txt";
+  public static final String BUFFERED_FILE = "Buffered.bin";
   public static final String BINARY_FILE = "Student.bin";
 
   public static void main(String[] args) throws IOException {
@@ -35,7 +35,8 @@ public class Launcher {
     // writer.nioWriterWithBuffer(BUFFERED_FILE);
     // reader.nioReadWithStream(FILE_NAME);
     // writer.nioWriterWithStream(BUFFERED_FILE, "files recorded");
-    reader.nioReadWithChannel(FILE_NAME);
+    // reader.nioReadWithChannel(FILE_NAME);
+    writer.nioWriteWithChannel(BUFFERED_FILE);
 
   }
 

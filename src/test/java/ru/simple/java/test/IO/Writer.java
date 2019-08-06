@@ -4,6 +4,8 @@ import ru.simple.java.test.lists.map.treemap.AverageStudentGrade;
 import ru.simple.java.test.lists.map.treemap.SubjectGrade;
 
 import java.io.*;
+import java.nio.ByteBuffer;
+import java.nio.channels.FileChannel;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -92,6 +94,21 @@ public class Writer {
     } catch (IOException e) {
       e.printStackTrace();
     }
+  }
+
+  public void nioWriteWithChannel(String fileName) {
+    String text = "random text for testing";
+
+    try (RandomAccessFile file = new RandomAccessFile(fileName, "rw");
+         FileChannel channel = file.getChannel()) {
+
+      ByteBuffer buffer = ByteBuffer.wrap(text.getBytes());
+      channel.write(buffer);
+
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+
   }
 
 }

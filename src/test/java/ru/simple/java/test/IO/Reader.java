@@ -84,11 +84,9 @@ public class Reader {
     FileOutputStream outputStream = new FileOutputStream(fileName);
     outputStream.getChannel();*/
 
-    try {
-      // создаем channel - к-й работает в обе стороны, т.е. как на read (input) так и на write (output)
-      RandomAccessFile rw = new RandomAccessFile(fileName, "rw");
-      FileChannel channel = rw.getChannel();
-
+    // создаем channel - к-й работает в обе стороны, т.е. как на read (input) так и на write (output)
+    try (RandomAccessFile rw = new RandomAccessFile(fileName, "rw");
+         FileChannel channel = rw.getChannel()) {
       ByteBuffer buffer = ByteBuffer.allocate(100); // capacity буфера
 
       int bytesNumber = channel.read(buffer);

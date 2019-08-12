@@ -11,6 +11,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.*;
 
 import static java.nio.file.StandardOpenOption.APPEND;
@@ -107,6 +108,35 @@ public class Writer {
 
     } catch (IOException e) {
       e.printStackTrace();
+    }
+  }
+
+  public void writeWithRandomAccess(String fileName) {
+    // строка к-ю мы будем записывать (условно, отметка)
+    ByteBuffer mark = ByteBuffer.wrap("MARKED AREA".getBytes());
+    // данные к-е мы вычитали в определенной области файла и к-е мы потом запишем в другую область
+    ByteBuffer buffer = ByteBuffer.allocate(10);
+    Path path = Paths.get(fileName);
+
+    try (FileChannel openFile = FileChannel.open(path, StandardOpenOption.READ, StandardOpenOption.WRITE)) {
+      int numBytes = 0;
+      while (buffer.hasRemaining() && numBytes != -1) {
+        numBytes = openFile.read(buffer);
+      }
+      openFile.position(0);
+      openFile.write(mark);
+      long size = openFile.size();
+      openFile.position(size / 2);
+      mark.rewind();
+      openFile.write(mark);
+      openFile.position(size - 1);
+      mark.rewind();
+      openFile.write(mark);
+      buffer.rewind();
+      openFile.write(buffer);
+
+    } catch (IOException e) {
+
     }
 
   }

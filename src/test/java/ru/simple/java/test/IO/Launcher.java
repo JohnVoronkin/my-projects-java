@@ -4,7 +4,6 @@ import ru.simple.java.test.lists.map.treemap.AverageStudentGrade;
 import ru.simple.java.test.lists.map.treemap.SubjectGrade;
 import ru.simple.java.test.lists.map.treemap.TreeMapLauncher;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -16,14 +15,14 @@ public class Launcher {
   public static final String BUFFERED_FILE = "Buffered.bin";
   public static final String BINARY_FILE = "Student.bin";
 
-  public static void main(String[] args) throws IOException {
+  public static void main(String[] args) {
     Reader reader = new Reader();
     Writer writer = new Writer();
     SortedMap<AverageStudentGrade, Set<SubjectGrade>> grades = TreeMapLauncher.createGrades();
 
-    /*writer.writeFile(grades, FILE_NAME);
-    reader.readFile(FILE_NAME);
-    writer.byteStream(FILE_NAME);*/
+    writer.writeFile(grades, FILE_NAME);
+    // reader.readFile(FILE_NAME);
+    // writer.byteStream(FILE_NAME);
 
     //writer.writeWithFormatter();
 
@@ -36,7 +35,8 @@ public class Launcher {
     // reader.nioReadWithStream(FILE_NAME);
     // writer.nioWriterWithStream(BUFFERED_FILE, "files recorded");
     // reader.nioReadWithChannel(FILE_NAME);
-    writer.nioWriteWithChannel(BUFFERED_FILE);
+    // writer.nioWriteWithChannel(BUFFERED_FILE);
+    writer.writeWithRandomAccess(FILE_NAME);
 
   }
 

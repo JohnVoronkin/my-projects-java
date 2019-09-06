@@ -99,5 +99,34 @@ public class FileUtils {
     Files.delete(filesPath);
   }
 
+  public void processDir() {
+    Path dir = Paths.get("temp");
+    try {
+      if (Files.notExists(dir))
+        Files.createDirectory(dir);
+      // создаем вложенную директорию
+      Files.createDirectories(Paths.get("temp/a/b/c"));
+      // создаем временную директорию
+      Files.createTempDirectory(dir, "tmp_");
+
+      // вывести корневые дериктории
+      Iterable<Path> rootDirectories = FileSystems.getDefault().getRootDirectories();
+      for (Path rootDir : rootDirectories) {
+        System.out.println(rootDir);
+      }
+
+      // фильтр для того чтобы вывести только дериктории
+      DirectoryStream.Filter<Path> filter = entry -> Files.isDirectory(entry);
+
+      // вывести содержимое дериктории
+      try (DirectoryStream<Path> paths = Files.newDirectoryStream(dir, filter)) {
+        for (Path path : paths)
+          System.out.println(path);
+      }
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
 
 }

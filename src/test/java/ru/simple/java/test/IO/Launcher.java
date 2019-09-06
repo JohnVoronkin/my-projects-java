@@ -1,5 +1,6 @@
 package ru.simple.java.test.IO;
 
+import ru.simple.java.test.IO.NIO.FileUtils;
 import ru.simple.java.test.lists.map.treemap.AverageStudentGrade;
 import ru.simple.java.test.lists.map.treemap.SubjectGrade;
 import ru.simple.java.test.lists.map.treemap.TreeMapLauncher;
@@ -36,7 +37,11 @@ public class Launcher {
     // writer.nioWriterWithStream(BUFFERED_FILE, "files recorded");
     // reader.nioReadWithChannel(FILE_NAME);
     // writer.nioWriteWithChannel(BUFFERED_FILE);
-    writer.writeWithRandomAccess(FILE_NAME);
+    // writer.writeWithRandomAccess(FILE_NAME);
+
+    FileUtils utils = new FileUtils();
+    utils.processDir();
+
 
   }
 

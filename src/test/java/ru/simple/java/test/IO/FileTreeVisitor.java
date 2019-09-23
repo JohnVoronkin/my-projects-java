@@ -25,11 +25,14 @@ public class FileTreeVisitor {
     private void renameTree(Path file) throws IOException {
       // сколько вложенных директорий имеется в пути
       int nameCount = file.getNameCount();
-      Path startPath = file.subpath(0, nameCount - 1);
-      Path endPath = file.subpath(nameCount - 1, nameCount);
 
-      Files.move(file, Paths.get(startPath + File.separator +
-              LocalDate.now().format(DateTimeFormatter.ISO_DATE) + "_" + endPath));
+      if (nameCount > 1) {
+        Path startPath = file.subpath(0, nameCount - 1);
+        Path endPath = file.subpath(nameCount - 1, nameCount);
+
+        Files.move(file, Paths.get(startPath + File.separator +
+                LocalDate.now().format(DateTimeFormatter.ISO_DATE) + "_" + endPath));
+      }
     }
 
     @Override

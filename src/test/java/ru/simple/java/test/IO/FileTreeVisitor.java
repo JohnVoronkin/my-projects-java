@@ -8,6 +8,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class FileTreeVisitor {
+
   public static void main(String[] args) throws IOException {
     Path path = Paths.get("temp");
     Files.walkFileTree(path, new Visitor());
@@ -43,6 +44,25 @@ public class FileTreeVisitor {
     @Override
     public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
       renameTree(dir);
+      return FileVisitResult.CONTINUE;
+    }
+  }
+
+
+  public static class CopyFileVisitor extends SimpleFileVisitor<Path> {
+    @Override
+    public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) throws IOException {
+      return super.preVisitDirectory(dir, attrs);
+    }
+
+    @Override
+    public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+      return super.visitFile(file, attrs);
+    }
+
+    @Override
+    public FileVisitResult visitFileFailed(Path file, IOException exc) {
+      System.out.println("copy file faild " + file);
       return FileVisitResult.CONTINUE;
     }
   }

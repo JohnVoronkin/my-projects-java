@@ -2,7 +2,3 @@
 /out/
 /.gradle/
 /build/
-*.txt
-*.bin
-
-/example-automated/out

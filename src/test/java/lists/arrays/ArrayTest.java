@@ -1,4 +1,4 @@
-package ru.simple.java.test.lists.arrays;
+package lists.arrays;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package ru.simple.java.test.lists;
+package lists;
 
 import song.Song;
 

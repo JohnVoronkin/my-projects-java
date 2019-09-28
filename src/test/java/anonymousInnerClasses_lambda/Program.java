@@ -1,4 +1,4 @@
-package ru.simple.java.test.anonymousInnerClasses_lambda;
+package anonymousInnerClasses_lambda;
 
 import consumer.Radio;
 import consumer.Switcher;

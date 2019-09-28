@@ -1,9 +1,9 @@
-package ru.simple.java.test.IO;
+package IO;
 
-import ru.simple.java.test.IO.NIO.FileUtils;
-import ru.simple.java.test.lists.map.treemap.AverageStudentGrade;
-import ru.simple.java.test.lists.map.treemap.SubjectGrade;
-import ru.simple.java.test.lists.map.treemap.TreeMapLauncher;
+import IO.NIO.FileUtils;
+import lists.map.treemap.AverageStudentGrade;
+import lists.map.treemap.SubjectGrade;
+import lists.map.treemap.TreeMapLauncher;
 
 import java.util.ArrayList;
 import java.util.List;

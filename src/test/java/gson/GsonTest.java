@@ -1,4 +1,4 @@
-package ru.simple.java.test.gson;
+package gson;
 
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;

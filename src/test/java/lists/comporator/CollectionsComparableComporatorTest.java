@@ -1,4 +1,4 @@
-package ru.simple.java.test.lists.comporator;
+package lists.comporator;
 
 import java.util.*;
 

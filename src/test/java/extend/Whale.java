@@ -1,4 +1,4 @@
-package ru.simple.java.test.extend;
+package extend;
 
 public class Whale extends Cow {
 

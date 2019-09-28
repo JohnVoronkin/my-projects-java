@@ -1,5 +1,3 @@
-package ru.simple.java.test;
-
 public class BaseTest {
 
   private final static String RED = "красный";

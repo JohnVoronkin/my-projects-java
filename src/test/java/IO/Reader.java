@@ -1,4 +1,4 @@
-package ru.simple.java.test.IO;
+package IO;
 
 import java.io.*;
 import java.nio.ByteBuffer;

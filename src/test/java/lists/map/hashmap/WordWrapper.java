@@ -1,4 +1,4 @@
-package ru.simple.java.test.lists.map.hashmap;
+package lists.map.hashmap;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

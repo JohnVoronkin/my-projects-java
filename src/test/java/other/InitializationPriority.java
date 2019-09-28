@@ -1,4 +1,4 @@
-package ru.simple.java.test.other;
+package other;
 
 public class InitializationPriority {
 

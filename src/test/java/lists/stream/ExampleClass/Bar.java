@@ -1,4 +1,4 @@
-package ru.simple.java.test.lists.stream.ExampleClass;
+package lists.stream.ExampleClass;
 
 public class Bar {
 

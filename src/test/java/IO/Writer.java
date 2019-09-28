@@ -1,7 +1,7 @@
-package ru.simple.java.test.IO;
+package IO;
 
-import ru.simple.java.test.lists.map.treemap.AverageStudentGrade;
-import ru.simple.java.test.lists.map.treemap.SubjectGrade;
+import lists.map.treemap.AverageStudentGrade;
+import lists.map.treemap.SubjectGrade;
 
 import java.io.*;
 import java.nio.ByteBuffer;

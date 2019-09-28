@@ -1,8 +1,8 @@
-package ru.simple.java.test.IO;
+package IO;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import ru.simple.java.test.lists.map.treemap.SubjectGrade;
+import lists.map.treemap.SubjectGrade;
 
 import java.io.Serializable;
 import java.util.Set;

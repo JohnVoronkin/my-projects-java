@@ -1,4 +1,4 @@
-package ru.simple.java.test.extend.polymorphism;
+package extend.polymorphism;
 
 public abstract class ChessItem {
 

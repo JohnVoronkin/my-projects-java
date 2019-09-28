@@ -1,4 +1,4 @@
-package ru.simple.java.test.fori;
+package fori;
 
 /**
  * Использование break, как цивилизованной формы goto.

@@ -1,6 +1,4 @@
-package ru.simple.java.test.lists.map.hashmap;
-
-import lombok.EqualsAndHashCode;
+package lists.map.hashmap;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package ru.simple.java.test.lists.map.treemap;
+package lists.map.treemap;
 
 import java.util.*;
 

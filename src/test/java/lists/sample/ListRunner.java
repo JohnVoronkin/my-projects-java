@@ -1,4 +1,4 @@
-package ru.simple.java.test.lists.sample;
+package lists.sample;
 
 
 import java.util.Scanner;

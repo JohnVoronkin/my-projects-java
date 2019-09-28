@@ -1,7 +1,7 @@
-package ru.simple.java.test.lists.stream;
+package lists.stream;
 
-import ru.simple.java.test.lists.stream.ExampleClass.Bar;
-import ru.simple.java.test.lists.stream.ExampleClass.Foo;
+import lists.stream.ExampleClass.Bar;
+import lists.stream.ExampleClass.Foo;
 
 import java.util.ArrayList;
 import java.util.stream.IntStream;

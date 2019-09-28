@@ -1,4 +1,4 @@
-package ru.simple.java.test.IO.NIO;
+package IO.NIO;
 
 import java.io.BufferedInputStream;
 import java.io.File;

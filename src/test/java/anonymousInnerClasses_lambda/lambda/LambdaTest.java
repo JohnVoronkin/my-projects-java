@@ -1,4 +1,4 @@
-package ru.simple.java.test.anonymousInnerClasses_lambda.lambda;
+package anonymousInnerClasses_lambda.lambda;
 
 import java.util.Arrays;
 import java.util.List;

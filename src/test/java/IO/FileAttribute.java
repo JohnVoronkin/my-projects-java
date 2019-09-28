@@ -1,4 +1,4 @@
-package ru.simple.java.test.IO;
+package IO;
 
 import java.io.IOException;
 import java.nio.file.FileStore;

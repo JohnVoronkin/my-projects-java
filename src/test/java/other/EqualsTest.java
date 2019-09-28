@@ -1,4 +1,4 @@
-package ru.simple.java.test.other;
+package other;
 
 /**
  * Created by john on 15.06.2017.

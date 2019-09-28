@@ -1,4 +1,4 @@
-package ru.simple.java.test.thread;
+package thread;
 
 public class ClockManager {
 

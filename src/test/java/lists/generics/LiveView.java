@@ -1,4 +1,4 @@
-package ru.simple.java.test.lists.generics;
+package lists.generics;
 
 public class LiveView {
 

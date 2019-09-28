@@ -1,4 +1,4 @@
-package ru.simple.java.test.aggregation_composition;
+package aggregation_composition;
 
 public class AggregationTest {
 

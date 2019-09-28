@@ -1,4 +1,4 @@
-package ru.simple.java.test.extend.polymorphism.sample;
+package extend.polymorphism.sample;
 
 public class Tiger extends Cat {
 

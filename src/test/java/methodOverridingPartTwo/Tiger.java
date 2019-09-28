@@ -1,4 +1,4 @@
-package ru.simple.java.test.methodOverridingPartTwo;
+package methodOverridingPartTwo;
 
 public class Tiger extends Cat {
 

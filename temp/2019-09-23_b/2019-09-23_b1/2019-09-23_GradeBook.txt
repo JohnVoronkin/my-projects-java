@@ -1,0 +1,20 @@
+MARKED AREActor average grade: 65.0
+subject: historygrade: 67
+subject: literaturegrade: 50
+subject: mathematicsgrade: 78
+
+student: simpson average grade: 69.333336
+subject: mathematicsgrade: 60
+subject: historygrade: 78
+subject: literaturegrade: 70
+
+sMARKED AREAx average grade: 87.333336
+subject: mathematicsgrade: 89
+subject: literaturegrade: 78
+subject: historygrade: 95
+
+student: jonSnow average grade: 90.333336
+subject: historygrade: 90
+subject: literaturegrade: 83
+subject: mathematicsgrade: 98
+MARKED AREAstudent: v

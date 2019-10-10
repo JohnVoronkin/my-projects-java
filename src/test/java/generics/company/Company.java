@@ -14,10 +14,18 @@ public class Company {
   private List<Department> departments = new ArrayList<>();
   private List<Employee> employees = new ArrayList<>();
 
-  public void addDepartment(Department department) {
+  public <T extends Employee> void addDepartment(Department<T> department) {
     this.departments.add(department);
-    List<Employee> employeesList = department.getEmployees();
+    List<T> employeesList = department.getEmployees();
+    giveRise(employeesList);
     this.employees.addAll(employeesList);
+  }
+
+  private void giveRise(List<? extends Employee> employees) {
+    for (Employee employee : employees) {
+      var rise = employee.getSalary() * 0.2f;
+      employee.setSalary(employee.getSalary() + rise);
+    }
   }
 
 

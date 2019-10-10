@@ -20,11 +20,12 @@ public class GenericsMethods {
     System.out.println("max array double " + findMax(doubleArray));
     // System.out.println("max array string " + findMax(stringArray));
 
-    List<Integer> list = new ArrayList<>(Arrays.asList(12, 3, 45, 122));
-    printElements(list);
+    List<Integer> integers = new ArrayList<>(Arrays.asList(12, 3, 45, 122));
+    List<Double> doubles = new ArrayList<>(Arrays.asList(12.1, 3.93, 45.13, 122.23));
+    printElements(integers);
+    printElements(doubles);
 
-
-    MyBox<Integer> myBox = new MyBox<Integer>("");
+    MyBox<Integer> myBox = new MyBox<>("");
 
   }
 
@@ -46,7 +47,7 @@ public class GenericsMethods {
     return max;
   }
 
-  private static void printElements(List<Integer> list) {
+  private static void printElements(List<? extends Number> list) {
     for (Number n : list) {
       System.out.println(n);
     }

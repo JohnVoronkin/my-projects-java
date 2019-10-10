@@ -11,18 +11,18 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-public class Department {
+public class Department<T extends Employee> {
 
   private String name;
   private int employeeNumber;
-  private List<Employee> employees = new ArrayList<>();
+  private List<T> employees = new ArrayList<>();
 
   public Department(String name, int employeeNumber) {
     this.name = name;
     this.employeeNumber = employeeNumber;
   }
 
-  public boolean addEmployee(Employee employees) {
+  public boolean addEmployee(T employees) {
     return this.employees.add(employees);
   }
 

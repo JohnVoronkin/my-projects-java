@@ -1,6 +1,7 @@
 package generics.company;
 
 import generics.company.employees.Employee;
+import generics.company.employees.ITSpecialist;
 import lombok.Getter;
 import lombok.ToString;
 
@@ -26,6 +27,16 @@ public class Company {
       var rise = employee.getSalary() * 0.2f;
       employee.setSalary(employee.getSalary() + rise);
     }
+  }
+
+  public void print(List<?> list) {
+    System.out.println("size " + list.size());
+    System.out.println(list);
+  }
+
+  public void addToItEmployees(List<? super ITSpecialist> list) {
+    list.add(new ITSpecialist("Bob", 3000f));
+
   }
 
 

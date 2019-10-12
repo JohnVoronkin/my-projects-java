@@ -20,6 +20,17 @@ public class CompanyMain {
     accounting.addEmployee(accountant);
     management.addEmployee(manager);
     itGuys.addEmployee(itSpecialist);
+
+    company.addDepartment(accounting);
+    company.addDepartment(management);
+    company.addDepartment(itGuys);
+
+    company.print(company.getDepartments());
+    company.print(company.getEmployees());
+    System.out.println();
+    company.addToItEmployees(itGuys.getEmployees());
+    company.addToItEmployees(company.getEmployees());
+
   }
 
 }

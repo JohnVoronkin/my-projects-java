@@ -1,7 +1,7 @@
 package IO;
 
-import lists.map.treemap.AverageStudentGrade;
-import lists.map.treemap.SubjectGrade;
+import collections.map.treemap.AverageStudentGrade;
+import collections.map.treemap.SubjectGrade;
 
 import java.io.*;
 import java.nio.ByteBuffer;

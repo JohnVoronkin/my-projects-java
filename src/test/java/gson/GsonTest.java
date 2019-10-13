@@ -19,7 +19,7 @@ public class GsonTest {
     user.userLogin("vasya").userPassword("123");
 
     String jsonInString = gson.toJson(user);
-    System.out.println("json in string" + jsonInString);
+    System.out.println("json in basic.string" + jsonInString);
 
     String jsonString = "{\"user_login\": \"vasya\", \"user_password\": \"123\"}";
 

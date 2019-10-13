@@ -18,7 +18,7 @@ public class GenericsMethods {
 
     System.out.println("max array int " + findMax(intArray));
     System.out.println("max array double " + findMax(doubleArray));
-    // System.out.println("max array string " + findMax(stringArray));
+    // System.out.println("max array basic.string " + findMax(stringArray));
 
     List<Integer> integers = new ArrayList<>(Arrays.asList(12, 3, 45, 122));
     List<Double> doubles = new ArrayList<>(Arrays.asList(12.1, 3.93, 45.13, 122.23));

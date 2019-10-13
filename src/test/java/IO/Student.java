@@ -2,7 +2,7 @@ package IO;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lists.map.treemap.SubjectGrade;
+import collections.map.treemap.SubjectGrade;
 
 import java.io.Serializable;
 import java.util.Set;

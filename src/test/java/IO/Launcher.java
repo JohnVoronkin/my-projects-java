@@ -1,9 +1,9 @@
 package IO;
 
 import IO.NIO.FileUtils;
-import lists.map.treemap.AverageStudentGrade;
-import lists.map.treemap.SubjectGrade;
-import lists.map.treemap.TreeMapLauncher;
+import collections.map.treemap.AverageStudentGrade;
+import collections.map.treemap.SubjectGrade;
+import collections.map.treemap.TreeMapLauncher;
 
 import java.util.ArrayList;
 import java.util.List;

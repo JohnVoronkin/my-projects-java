@@ -1,8 +1,8 @@
-package generics.company;
+package collections.generics.company;
 
-import generics.company.employees.Accountant;
-import generics.company.employees.ITSpecialist;
-import generics.company.employees.Manager;
+import collections.generics.company.employees.Accountant;
+import collections.generics.company.employees.ITSpecialist;
+import collections.generics.company.employees.Manager;
 
 public class CompanyMain {
 

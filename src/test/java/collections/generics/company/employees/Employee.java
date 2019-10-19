@@ -1,4 +1,4 @@
-package generics.company.employees;
+package collections.generics.company.employees;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

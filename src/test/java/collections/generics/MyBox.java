@@ -1,4 +1,4 @@
-package generics;
+package collections.generics;
 
 public class MyBox<X> {
 

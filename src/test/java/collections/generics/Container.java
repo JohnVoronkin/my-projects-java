@@ -1,4 +1,4 @@
-package generics;
+package collections.generics;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

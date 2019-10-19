@@ -1,7 +1,7 @@
-package generics.company;
+package collections.generics.company;
 
-import generics.company.employees.Employee;
-import generics.company.employees.ITSpecialist;
+import collections.generics.company.employees.Employee;
+import collections.generics.company.employees.ITSpecialist;
 import lombok.Getter;
 import lombok.ToString;
 

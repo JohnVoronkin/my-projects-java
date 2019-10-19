@@ -1,4 +1,4 @@
-package generics.company.employees;
+package collections.generics.company.employees;
 
 public class ITSpecialist extends Employee {
 

@@ -33,6 +33,21 @@ public class LambdaExample {
     processElements(intList, x -> Math.sin(x.doubleValue()));
     processElements(doubleList, x -> Math.sin(x.doubleValue()));
     TimeUtil.measure(() -> Arrays.sort(createRandomArray()));
+    System.out.println("the end");
+
+    String helloText = "Hello ";
+    Double d = 0.123;
+
+    var doubleTransformUtils = new TransformUtils<Double>();
+    doubleTransformUtils.transform(d, Math::sin);
+
+    var stringTransformUtils = new TransformUtils<String>();
+    System.out.println(stringTransformUtils.transform(helloText, TransformUtils::exclaim));
+
+    String suffix = "zhenya";
+
+    // helloText.concat(suffix);
+    System.out.println(stringTransformUtils.transform(suffix, helloText::concat));
 
   }
 

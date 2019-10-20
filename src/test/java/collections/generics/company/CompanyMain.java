@@ -28,6 +28,7 @@ public class CompanyMain {
     company.print(company.getDepartments());
     company.print(company.getEmployees());
     System.out.println();
+
     company.addToItEmployees(itGuys.getEmployees());
     company.addToItEmployees(company.getEmployees());
 

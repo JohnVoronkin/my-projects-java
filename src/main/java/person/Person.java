@@ -1,8 +1,13 @@
 package person;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
+@Setter
+@Getter
 public class Person {
 
   private ArrayList<Actor> actors;
@@ -28,22 +33,6 @@ public class Person {
       actor.act();
     }
     return this;
-  }
-
-  public String getName() {
-    return this.name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public Integer getAge() {
-    return this.age;
-  }
-
-  public void setAge(Integer age) {
-    this.age = age;
   }
 
   @Override

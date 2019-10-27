@@ -11,26 +11,30 @@ import java.util.stream.Stream;
  */
 public class PersonCollect {
 
-    private List<Person> persons = new ArrayList<>();
+  private List<Person> persons = new ArrayList<>();
 
-    public Stream<Person> persons() {
-        return getAllPersons().stream();
-    }
+  /*
+   * метод persons(), который будет возвращать стрим, т.е. если мы захотим как-то модифицировать
+   * коллекцию, то будем писать меньше кода.
+   */
+  public Stream<Person> persons() {
+    return getAllPersons().stream();
+  }
 
-    /*
-    Метод getAllPersons собирает данные в коллекцию lists. Данные могут храниться где угодно: БД, Excel, в самом коде
-     */
-    public List<Person> getAllPersons() {
-        if (persons.isEmpty()) {
-            persons = Arrays.asList(
-                    new Person("Andrew", 17),
-                    new Person("Igor", 38),
-                    new Person("Ira", 6),
-                    new Person("Maxim", 24),
-                    new Person("Mariay", 18)
-            );
-        }
-        return persons;
+  /*
+  Метод getAllPersons собирает данные в коллекцию lists. Данные могут храниться где угодно: БД, Excel, в самом коде
+   */
+  public List<Person> getAllPersons() {
+    if (persons.isEmpty()) {
+      persons = Arrays.asList(
+              new Person("Andrew", 17),
+              new Person("Igor", 38),
+              new Person("Ira", 6),
+              new Person("Maxim", 24),
+              new Person("John", 18)
+      );
     }
+    return persons;
+  }
 
 }

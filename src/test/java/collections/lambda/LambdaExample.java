@@ -1,5 +1,7 @@
 package collections.lambda;
 
+import collections.lambda.model.Circle;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -11,8 +13,24 @@ interface ElementProcessor<T extends Number> {
 }
 
 @FunctionalInterface
-interface ExecutiveFunction {
+interface Operation {
+
   void process();
+
+  static void measure(Operation function) {
+    long start = System.currentTimeMillis();
+    function.process();
+    long end = System.currentTimeMillis();
+    System.out.println("time spent " + (end - start));
+  }
+
+  default Operation combineOperation(Operation that) {
+    return () -> {
+      process();
+      that.process();
+    };
+  }
+
 }
 
 public class LambdaExample {
@@ -32,9 +50,23 @@ public class LambdaExample {
 
     processElements(intList, x -> Math.sin(x.doubleValue()));
     processElements(doubleList, x -> Math.sin(x.doubleValue()));
-    TimeUtil.measure(() -> Arrays.sort(createRandomArray()));
+    System.out.println("start");
+   // Operation.measure(() -> Arrays.sort(createRandomArray()));
     System.out.println("the end");
 
+    Operation operation1 = () -> Arrays.sort(createRandomArray());
+    Operation operation2 = () -> Arrays.sort(createRandomArray());
+
+    Operation.measure(operation1.combineOperation(operation2));
+
+    // processStrings();
+
+    Circle circle = new Circle();
+    System.out.println(circle.calcSomething());
+
+  }
+
+  private static void processStrings() {
     String helloText = "Hello ";
     Double d = 0.123;
 
@@ -48,7 +80,6 @@ public class LambdaExample {
 
     // helloText.concat(suffix);
     System.out.println(stringTransformUtils.transform(suffix, helloText::concat));
-
   }
 
   public static <T extends Number> void processElements(List<T> intList, ElementProcessor function) {
@@ -67,15 +98,6 @@ public class LambdaExample {
       myArray[i] = random.nextInt(myArray.length);
     }
     return myArray;
-  }
-
-  public static class TimeUtil {
-    private static void measure(ExecutiveFunction function) {
-      long start = System.currentTimeMillis();
-      function.process();
-      long end = System.currentTimeMillis();
-      System.out.println("time spent " + (end - start));
-    }
   }
 
 }

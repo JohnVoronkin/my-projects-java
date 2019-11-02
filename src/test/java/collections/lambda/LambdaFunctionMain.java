@@ -61,7 +61,6 @@ public class LambdaFunctionMain {
 
   public static <T, R> R combine(List<T> elements, R zeroElement, Function<T, R> function,
                                  BinaryOperator<R> combiner) {
-    int sum = 0;
     for (T e : elements) {
       zeroElement = combiner.apply(zeroElement, function.apply(e));
     }

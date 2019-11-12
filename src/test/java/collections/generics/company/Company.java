@@ -31,7 +31,7 @@ public class Company {
 
   public void print(List<?> list) {
     System.out.println("size " + list.size());
-    System.out.println(list);
+    list.forEach(System.out::println);
   }
 
   public void addToItEmployees(List<? super ITSpecialist> list) {

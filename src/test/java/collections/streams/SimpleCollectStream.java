@@ -1,4 +1,4 @@
-package collections.stream;
+package collections.streams;
 
 import person.Person;
 

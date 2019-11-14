@@ -1,7 +1,7 @@
-package collections.stream;
+package collections.streams;
 
-import collections.stream.ExampleClass.Bar;
-import collections.stream.ExampleClass.Foo;
+import collections.streams.ExampleClass.Bar;
+import collections.streams.ExampleClass.Foo;
 
 import java.util.ArrayList;
 import java.util.stream.IntStream;

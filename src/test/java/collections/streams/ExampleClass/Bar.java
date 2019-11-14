@@ -1,4 +1,4 @@
-package collections.stream.ExampleClass;
+package collections.streams.ExampleClass;
 
 public class Bar {
 

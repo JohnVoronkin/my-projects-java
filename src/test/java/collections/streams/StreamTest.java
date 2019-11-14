@@ -1,4 +1,4 @@
-package collections.stream;
+package collections.streams;
 
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -24,12 +24,12 @@ public class StreamTest {
     // Преобразование потоков:  Примитивный поток -> Поток объектов
     IntStream.range(1, 4)
             .mapToObj(i -> "c" + i)
-            .forEach(System.out::println);
-
+            .forEach(System.out::print);
+    System.out.println();
     Stream.of(1.0, 2.0, 3.0)
             .mapToInt(Double::intValue)
             .mapToObj(i -> "c" + i)
-            .forEach(System.out::println);
+            .forEach(System.out::print);
 
   }
 }

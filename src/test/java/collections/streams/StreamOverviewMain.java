@@ -15,6 +15,7 @@ import java.util.stream.Stream;
 public class StreamOverviewMain {
 
   private static List<Employee> employeeList = new ArrayList<>();
+  private static List<Employee> secondEmployeeList = new ArrayList<>();
   private static Map<Integer, Employee> employeeMap;
 
   public static void main(String[] args) throws IOException {
@@ -27,8 +28,17 @@ public class StreamOverviewMain {
     employeeList.add(new Employee(7, "Gomer", "White", 75000));
     employeeList.add(new Employee(10, "Misha", "Oker", 90000));
 
-    // testStreamFromList();
-    testStreamFromFile();
+    secondEmployeeList.add(new Employee(1, "Masha", "Sushkova", 19000));
+    secondEmployeeList.add(new Employee(2, "Trish", "Black", 10000));
+    secondEmployeeList.add(new Employee(4, "John", "Smith", 63000));
+    secondEmployeeList.add(new Employee(4, "Grey", "White", 75000));
+    secondEmployeeList.add(new Employee(9, "Alex", "Black", 50900));
+    secondEmployeeList.add(new Employee(6, "John", "Smith", 60020));
+    secondEmployeeList.add(new Employee(7, "Gomer", "White", 75000));
+    secondEmployeeList.add(new Employee(10, "Misha", "Oker", 90000));
+
+    testStreamFromList();
+    // testStreamFromFile();
 
   }
 
@@ -38,14 +48,21 @@ public class StreamOverviewMain {
             .collect(Collectors.toList())
             .forEach(System.out::println);
 
-    Integer[] ids = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    System.out.println("===");
 
+    Integer[] ids = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     // создаём стрим из массива
     Stream.of(ids)
             .map(StreamOverviewMain::findById)
             .filter(Objects::nonNull)
             .collect(Collectors.toList())
             .forEach(System.out::println);
+
+    List<List<Employee>> department = new ArrayList<>();
+    department.add(employeeList);
+    department.add(secondEmployeeList);
+
+    department.stream().flatMap(l -> l.stream().map(Employee::getName)).forEach(System.out::println);
 
   }
 
@@ -59,7 +76,7 @@ public class StreamOverviewMain {
 
   }
 
-  private static Employee findById(int id) {
+  private static Employee findById(final int id) {
     if (employeeMap == null) {
       employeeMap = employeeList.stream().distinct().collect(Collectors.toMap(Employee::getId, e -> e));
     }

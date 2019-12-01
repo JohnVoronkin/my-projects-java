@@ -1,14 +1,12 @@
 package collections.lambda.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @Setter
 @Getter
 @ToString
 @AllArgsConstructor
+@EqualsAndHashCode
 public class Employee {
 
   private int id;

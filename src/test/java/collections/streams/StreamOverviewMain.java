@@ -5,10 +5,7 @@ import collections.lambda.model.Employee;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -20,12 +17,12 @@ public class StreamOverviewMain {
 
   public static void main(String[] args) throws IOException {
     employeeList.add(new Employee(1, "Masha", "Sushkova", 19000));
-    employeeList.add(new Employee(2, "Trish", "Black", 10000));
+    employeeList.add(new Employee(1, "Trish", "Black", 10000));
     employeeList.add(new Employee(3, "John", "Smith", 63000));
     employeeList.add(new Employee(4, "Grey", "White", 75000));
     employeeList.add(new Employee(9, "Alex", "Black", 50900));
     employeeList.add(new Employee(6, "John", "Smith", 60020));
-    employeeList.add(new Employee(7, "Gomer", "White", 75000));
+    employeeList.add(new Employee(8, "Gomer", "White", 75000));
     employeeList.add(new Employee(10, "Misha", "Oker", 90000));
 
     secondEmployeeList.add(new Employee(1, "Masha", "Sushkova", 19000));
@@ -37,8 +34,10 @@ public class StreamOverviewMain {
     secondEmployeeList.add(new Employee(7, "Gomer", "White", 75000));
     secondEmployeeList.add(new Employee(10, "Misha", "Oker", 90000));
 
-    testStreamFromList();
+     testStreamFromList();
     // testStreamFromFile();
+
+    // testSortAndReduce();
 
   }
 
@@ -76,9 +75,35 @@ public class StreamOverviewMain {
 
   }
 
+  private static void testSortAndReduce() {
+    employeeList.stream()
+            .sorted((s1, s2) -> s1.getName().compareTo(s2.getName()))
+            .collect(Collectors.toList()).forEach(System.out::println);
+    System.out.println("===");
+    Employee max =
+            employeeList.stream().max(Comparator.comparingInt(Employee::getId)).get();
+    Employee min = employeeList.stream().min(Comparator.comparingInt(Employee::getSalary)).get();
+    System.out.println(max);
+    System.out.println(min);
+
+    System.out.println("===");
+    Employee identity = new Employee(0, "", "", 0);
+    // сводим несколько объектов в один
+    Employee reducedEmployee = employeeList.stream()
+            .reduce(identity, (e1, e2) -> {
+              e1.setId(e1.getId() + e2.getId());
+              e1.setSalary(e1.getSalary() + e2.getSalary());
+              return e1;
+            });
+
+    System.out.println(reducedEmployee);
+
+  }
+
   private static Employee findById(final int id) {
     if (employeeMap == null) {
-      employeeMap = employeeList.stream().distinct().collect(Collectors.toMap(Employee::getId, e -> e));
+      employeeMap = employeeList.stream()
+              .distinct().collect(Collectors.toMap(Employee::getId, e -> e));
     }
     return employeeMap.get(id);
   }

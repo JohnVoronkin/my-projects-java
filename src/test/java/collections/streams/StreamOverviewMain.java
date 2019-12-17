@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -13,11 +14,12 @@ public class StreamOverviewMain {
 
   private static List<Employee> employeeList = new ArrayList<>();
   private static List<Employee> secondEmployeeList = new ArrayList<>();
+  private static List<Employee> threeEmployeeList = new ArrayList<>();
   private static Map<Integer, Employee> employeeMap;
 
   public static void main(String[] args) throws IOException {
-    employeeList.add(new Employee(1, "Masha", "Sushkova", 19000));
-    employeeList.add(new Employee(1, "Trish", "Black", 10000));
+    employeeList.add(new Employee(10, "Masha", "Sushkova", 19000));
+    employeeList.add(new Employee(19, "Trish", "Black", 10000));
     employeeList.add(new Employee(3, "John", "Smith", 63000));
     employeeList.add(new Employee(4, "Grey", "White", 75000));
     employeeList.add(new Employee(9, "Alex", "Black", 50900));
@@ -34,11 +36,36 @@ public class StreamOverviewMain {
     secondEmployeeList.add(new Employee(7, "Gomer", "White", 75000));
     secondEmployeeList.add(new Employee(10, "Misha", "Oker", 90000));
 
-     testStreamFromList();
+
+    threeEmployeeList.add(new Employee(10, "Masha", "Sushkova", 19000, "IT"));
+    threeEmployeeList.add(new Employee(19, "Trish", "Black", 10000, "IT"));
+    threeEmployeeList.add(new Employee(3, "John", "Smith", 63000, "IT"));
+    threeEmployeeList.add(new Employee(4, "Grey", "White", 75000, "Manager"));
+
+    // testStreamFromList();
     // testStreamFromFile();
 
     // testSortAndReduce();
+    // partitionByIncome();
+    groupByCriterion(Employee::getDepartment);
 
+
+  }
+
+  // группируем Employee по какого-нибудь критерию
+  public static <R> void groupByCriterion(Function<Employee, R> function) {
+    Map<R, List<Employee>> collectedEmployees = threeEmployeeList.stream().collect(Collectors.groupingBy(function));
+    // keySet - возвращает Set
+    collectedEmployees.keySet().forEach(e -> System.out.println(e + "\n" + collectedEmployees.get(e)));
+  }
+
+  public static void partitionByIncome() {
+    Map<Boolean, List<Employee>> collectedEmployees =
+            threeEmployeeList.stream().collect(Collectors.partitioningBy(e -> e.getSalary() > 70000));
+    System.out.println("poor employees");
+    System.out.println(collectedEmployees.get(false));
+    System.out.println("rich employees");
+    System.out.println(collectedEmployees.get(true));
   }
 
   private static void testStreamFromList() {
@@ -69,8 +96,9 @@ public class StreamOverviewMain {
     Files.lines(Paths.get("words.txt"))
             .filter(e -> e.length() > 4)
             .map(String::toUpperCase)
-            .distinct()
-            .sorted()
+            //.distinct()
+            //.sorted()
+            .collect(Collectors.toCollection(ArrayList::new))
             .forEach(System.out::println);
 
   }

@@ -23,8 +23,8 @@ public class AsynchronousTest {
         Thread thread = new Thread(task);
         thread.start();
 
-      /*  int value = findOutThePriceOfAFlatParking();
-        result.set(value);*/
+        int value = findOutThePriceOfAFlatParking();
+        result.set(value);
 
         Thread.sleep(2000);
 

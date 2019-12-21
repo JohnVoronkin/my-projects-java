@@ -45,9 +45,9 @@ public class StreamOverviewMain {
     // testStreamFromList();
     // testStreamFromFile();
 
-    // testSortAndReduce();
+     testSortAndReduce();
     // partitionByIncome();
-    groupByCriterion(Employee::getDepartment);
+    // groupByCriterion(Employee::getDepartment);
 
 
   }

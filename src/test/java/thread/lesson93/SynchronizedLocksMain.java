@@ -3,7 +3,7 @@ package thread.lesson93;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SynchronizedBlocksMain {
+public class SynchronizedLocksMain {
 
   private int[] a = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
   private int[] b = {0, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
@@ -14,7 +14,7 @@ public class SynchronizedBlocksMain {
   private final Object lock2 = new Object();
 
   public static void main(String[] args) {
-    SynchronizedBlocksMain sb = new SynchronizedBlocksMain();
+    SynchronizedLocksMain sb = new SynchronizedLocksMain();
     sb.copy();
   }
 
@@ -36,7 +36,6 @@ public class SynchronizedBlocksMain {
     } catch (InterruptedException e) {
       e.printStackTrace();
     }
-
 
     long end = System.currentTimeMillis();
     System.out.println("time taken : " + (end - start) + " ms");

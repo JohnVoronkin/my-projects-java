@@ -7,7 +7,7 @@ import java.util.concurrent.BlockingQueue;
 import static threads.lesson93.ColorScheme.GREEN;
 import static threads.lesson93.ColorScheme.RED;
 
-public class ProducerConsumer {
+public class ProducerConsumerMain {
 
   // коллекция - промежуточное звено между Producer и Consumer, собственно это хранилище данных
   private static BlockingQueue<String> queue = new ArrayBlockingQueue<>(5); // 5 - размер очереди сколько мы можем сохранять
@@ -39,7 +39,7 @@ public class ProducerConsumer {
       try {
         produce();
       } catch (InterruptedException e) {
-
+        e.printStackTrace();
       }
     }
 

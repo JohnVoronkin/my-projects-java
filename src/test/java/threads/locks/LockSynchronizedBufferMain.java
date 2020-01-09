@@ -1,23 +1,32 @@
 package threads.locks;
 
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+import static threads.lesson93.ColorScheme.BLUE;
 import static threads.lesson93.ColorScheme.RED;
 
-public class SynchronizedBuffer {
+public class LockSynchronizedBufferMain {
 
-  private static final Lock monitor = new ReentrantLock();
+  private static final Lock monitor = new ReentrantLock(true);
+  /*
+   для того чтобы установить взаимодействие между двумя потоками - между Reader и Writer.
+    Они аналогично используются wait() и notify() - суть их таже. Т.е., например, для уведомления, что новое значение записано и можно
+    прочитать.
+   */
   public static final Condition canRead = monitor.newCondition();
   public static final Condition canWrite = monitor.newCondition();
 
+  // переменное значение, к-е будет использоваться двумя потоками
   private static int buffer = 0;
-  private static boolean isEmpty = true;
+  // проверяется - пустой или не пустой ли buffer (т.е. пора ли читать значение переменной или еще нет)
+  private static boolean isEmpty = true; // true - buffer пустой (empty)
 
   public static void main(String[] args) {
-    new Thread(SynchronizedBuffer::blockingWrite).start();
-    new Thread(SynchronizedBuffer::blockingRead).start();
+    new Thread(LockSynchronizedBufferMain::blockingWrite).start();
+    new Thread(LockSynchronizedBufferMain::blockingRead).start();
   }
 
 
@@ -29,11 +38,23 @@ public class SynchronizedBuffer {
     Имеется аналогичный вызов (lock и unlock)
     */
       monitor.lock();
-      buffer++;
-      isEmpty = false;
-      System.out.println(RED + "Writer produced " + buffer);
+      try {
+        while (!isEmpty) {
+          System.out.println(RED + "Writer пытается получить доступ к ресурсу");
+          System.out.println(RED + "buffer у нас полный!");
+          canWrite.await(5, TimeUnit.SECONDS); // получить сигнал в Reader и остановить работу нашего Writer
+        }
+        buffer++;
+        isEmpty = false;
+        System.out.println(RED + "Writer produced: " + buffer);
+        canRead.signal(); // т.о. просигналить Reader, что можно прочитать
 
-      monitor.unlock();
+
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      } finally {
+        monitor.unlock();
+      }
     }
 
   }
@@ -41,11 +62,21 @@ public class SynchronizedBuffer {
   private static void blockingRead() {
     for (int i = 0; i < 10; i++) {
       monitor.lock();
-      int readValue = buffer;
-      isEmpty = true;
-      System.out.println(RED + "Reader reads from buffer " + readValue);
-
-      monitor.unlock();
+      try {
+        while (isEmpty) {
+          System.out.println(BLUE + "Reader пытается получить доступ к ресурсу");
+          System.out.println(BLUE + "buffer у нас пустой!");
+          canRead.await(5, TimeUnit.SECONDS); // reader, пусть пока подождет
+        }
+        int readValue = buffer;
+        isEmpty = true;
+        System.out.println(BLUE + "Reader reads from buffer: " + readValue);
+        canWrite.signal(); // writer может продолжить записывать
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      } finally {
+        monitor.unlock();
+      }
     }
   }
 

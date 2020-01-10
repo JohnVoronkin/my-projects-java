@@ -1,4 +1,4 @@
-package thread.lesson93;
+package threads.lesson93;
 
 public class VolatileMain {
 

@@ -1,4 +1,4 @@
-package person;
+package domain.consumer.person;
 
 import lombok.Getter;
 import lombok.Setter;

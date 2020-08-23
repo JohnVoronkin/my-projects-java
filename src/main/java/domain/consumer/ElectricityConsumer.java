@@ -1,4 +1,4 @@
-package consumer;
+package domain.consumer;
 
 @FunctionalInterface
 public interface ElectricityConsumer {

@@ -1,4 +1,4 @@
-package consumer;
+package domain.consumer;
 
 public class Radio implements ElectricityConsumer {
 

@@ -1,4 +1,4 @@
-package song;
+package domain.consumer.song;
 
 public class Song implements Comparable<Song> {
 

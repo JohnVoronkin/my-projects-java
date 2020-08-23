@@ -1,6 +1,6 @@
-package song;
+package domain.consumer.song;
 
-import consumer.ElectricityConsumer;
+import domain.consumer.ElectricityConsumer;
 
 public class Lamp implements ElectricityConsumer {
 

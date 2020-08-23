@@ -1,4 +1,4 @@
-package person;
+package domain.consumer.person;
 
 @FunctionalInterface
 public interface Actor {

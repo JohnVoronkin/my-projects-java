@@ -48,7 +48,7 @@ public class WaitNotifyMain {
         synchronized (message) {
           System.out.println(BLUE + "producer message " + text);
           message.setMessage(text);
-          message.notify(); // сообщает consumer, что новое сообщение для обработки готово
+          message.notify(); // сообщает domain.consumer, что новое сообщение для обработки готово
           if (!"DONE".equalsIgnoreCase(text))
             message.wait();
         }
@@ -80,7 +80,7 @@ public class WaitNotifyMain {
       while (true) {
         Thread.sleep(400);
         synchronized (message) {
-          System.out.println(RED + "consumer message: " + message.getMessage());
+          System.out.println(RED + "domain.consumer message: " + message.getMessage());
           if (!"DONE".equalsIgnoreCase(message.getMessage())) {
             message.notify();
             message.wait();

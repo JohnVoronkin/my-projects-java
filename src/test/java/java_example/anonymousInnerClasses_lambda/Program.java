@@ -1,8 +1,8 @@
 package java_example.anonymousInnerClasses_lambda;
 
-import consumer.Radio;
-import consumer.Switcher;
-import song.Lamp;
+import domain.consumer.Radio;
+import domain.consumer.Switcher;
+import domain.song.Lamp;
 
 import static java.lang.System.out;
 

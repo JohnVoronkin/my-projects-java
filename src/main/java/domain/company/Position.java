@@ -1,7 +1,7 @@
-package domain.consumer.company;
+package domain.company;
 
 public enum Position {
 
-  MANAGER, WORKER, CHEF;
+  MANAGER, WORKER, CHEF
 
 }

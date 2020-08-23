@@ -1,7 +1,7 @@
 package java_example.collections.streams;
 
-import person.Person;
-import person.PersonCollect;
+import domain.person.Person;
+import domain.person.PersonCollect;
 
 import java.util.Comparator;
 

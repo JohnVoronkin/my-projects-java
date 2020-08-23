@@ -1,4 +1,4 @@
-package domain.consumer.company;
+package domain.company;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

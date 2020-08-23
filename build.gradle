@@ -3,7 +3,7 @@ version '1.0'
 
 buildscript {
     ext {
-        lombokVersion = '1.18.6'
+        lombokVersion = '1.18.12'
     }
     repositories {
         maven {

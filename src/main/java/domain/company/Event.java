@@ -1,6 +1,7 @@
-package domain.consumer.company;
+package domain.company;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 public class Event {
 

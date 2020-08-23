@@ -1,4 +1,4 @@
-package domain.consumer.song;
+package domain.song;
 
 import domain.consumer.ElectricityConsumer;
 

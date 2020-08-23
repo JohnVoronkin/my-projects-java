@@ -1,4 +1,4 @@
-package domain.consumer.person;
+package domain.person;
 
 
 import java.util.ArrayList;

@@ -1,6 +1,6 @@
 package java_example.collections.streams;
 
-import person.Person;
+import domain.person.Person;
 
 import java.util.*;
 import java.util.stream.Collector;
